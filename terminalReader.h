@@ -10,4 +10,5 @@
 
 TerminalInput getTerminalInput(int argc, char **argv);
 
+
 #endif //UNTITLED_TERMINALREADER_H

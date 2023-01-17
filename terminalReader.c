@@ -52,7 +52,7 @@ TerminalInput getTerminalInput(int argc, char **argv) {
         if (optind == 7) {
             terminalInput.inputFile = argv[optind];
         } else if (optind == 8) {
-            terminalInput.outputFile = concatenate(argv[optind], "");
+            terminalInput.outputFile = argv[optind];
         }
     }
 

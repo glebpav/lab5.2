@@ -1,6 +1,7 @@
 #include "terminalReader.h"
 #include "fileHelper.h"
 #include "sortHelper.h"
+#include "stdlib.h"
 
 int main(int argc, char **argv) {
     int dataArraySize = 0;
@@ -8,13 +9,23 @@ int main(int argc, char **argv) {
     TerminalInput terminalInput = getTerminalInput(argc, argv);
     Item *dataArray = getArrayFromFile(terminalInput.inputFile, &dataArraySize);
 
-    dataArray = sortData(dataArray,
-                         dataArraySize,
-                         terminalInput.algorithmOfSorting,
-                         terminalInput.fieldOfSorting,
-                         terminalInput.directionOfSorting);
+    sortData(&dataArray,
+             dataArraySize,
+             terminalInput.algorithmOfSorting,
+             terminalInput.fieldOfSorting,
+             terminalInput.directionOfSorting);
 
     writeFile(terminalInput.outputFile, dataArray, dataArraySize);
+
+    for(int i = 0; i < dataArraySize; i++) {
+        free(dataArray[i].fio);
+        free(dataArray[i].groupNumber);
+    }
+
+    // free(terminalInput.inputFile);
+    // free(terminalInput.outputFile);
+    free(dataArray);
+
     return 0;
 }
 

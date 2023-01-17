@@ -4,7 +4,7 @@
 #include "utils.h"
 
 Item *getArrayFromFile(char *fileName, int *arraySize);
-char **readFile(char *fileName, int *inputArraySize);
+void readFile(char *fileName, int *inputArraySize, char ***outputArray);
 void writeFile(char *fileName, Item *dataArray, int dataArraySize);
 
 

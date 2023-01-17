@@ -1,7 +1,3 @@
-//
-// Created by Gleb on 17.12.2022.
-//
-
 #ifndef UNTITLED_UTILS_H
 #define UNTITLED_UTILS_H
 
@@ -29,6 +25,14 @@ typedef struct TerminalInput {
     enum AlgorithmOfSorting algorithmOfSorting;
     enum StructFields fieldOfSorting;
 }TerminalInput;
+
+typedef struct TerminalInput2 {
+    int arrayLen;
+    int countOfArrays;
+    enum DirectionOfSorting directionOfSorting;
+    enum AlgorithmOfSorting algorithmOfSorting;
+    enum StructFields fieldOfSorting;
+}TerminalInput2;
 
 typedef struct Item {
     char *fio;

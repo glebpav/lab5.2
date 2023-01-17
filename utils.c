@@ -4,8 +4,16 @@
 #include "string.h"
 
 void clearItem(Item *item) {
-    item->fio = "";
-    item->groupNumber = "";
+
+    // free(item->fio);
+    // free(item->groupNumber);
+    //printf("fio in this: %s\n", item->fio);
+    if (item->fio != NULL) free(item->fio);
+    if (item->groupNumber != NULL) free(item->groupNumber);
+
+
+    item->fio = NULL;
+    item->groupNumber = NULL;
     item->avgMark = 0.;
 }
 
@@ -19,6 +27,7 @@ char *concatenate(char *str1, char *str2) {
         else outputStr[i] = str2[i - strlen(str1)];
     }
     outputStr[outputStrLen - 1] = '\0';
+    // free(str1);
     return outputStr;
 }
 
