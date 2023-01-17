@@ -70,7 +70,7 @@ void writeFile(char *fileName, Item *dataArray, int dataArraySize) {
 Item *getArrayFromFile(char *fileName, int *arraySize) {
 
     int inputArraySize = 0;
-    char **inputArray = calloc(1, sizeof (char *));
+    char **inputArray = NULL;
     readFile(fileName, &inputArraySize, &inputArray);
 
 //    for (int i = 0; i < inputArraySize; i++) {
@@ -105,6 +105,7 @@ Item *getArrayFromFile(char *fileName, int *arraySize) {
 
             char *buf = concatenate(" ", inputArray[i]);
             //free(inputArray[i]);
+            if (inputArray[i] != NULL) free(inputArray[i]);
             inputArray[i] = buf;
             // free(buf);
 
@@ -115,6 +116,7 @@ Item *getArrayFromFile(char *fileName, int *arraySize) {
             // memcpy (arrayItem.fio, buf, strlen(buf));
 
             // free(arrayItem.fio);
+            if (arrayItem.fio != NULL) free(arrayItem.fio);
             arrayItem.fio = buf;
             // free(buf);
 
@@ -136,6 +138,7 @@ Item *getArrayFromFile(char *fileName, int *arraySize) {
 
 
             // if (arrayItem.groupNumber != "" && arrayItem.groupNumber != "\0") free(arrayItem.groupNumber);
+            if (arrayItem.groupNumber != NULL) free(arrayItem.groupNumber);
             arrayItem.groupNumber = buf;
             // free(buf);
 

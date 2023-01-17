@@ -12,7 +12,7 @@ void pushElement(Item **inputArray, int inputLen, Item newItem) {
 
 void pushStrElement(char ***inputArray, int inputLen, char *newItem) {
     size_t newLen = strlen(newItem);
-    // if (inputLen == 0) (*inputArray) = calloc(1, sizeof(char*));
+    if (*inputArray == NULL) (*inputArray) = calloc(1, sizeof(char*));
     // else *inputArray = realloc((*inputArray), (inputLen + 1) * sizeof(char*));
     if (inputLen != 0) *inputArray = realloc((*inputArray), (inputLen + 1) * sizeof(char*));
     (*inputArray)[inputLen] = calloc(newLen + 1, sizeof(char));
