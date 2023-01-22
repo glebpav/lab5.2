@@ -1,4 +1,5 @@
 #include <string.h>
+#include <time.h>
 #include "sortHelper.h"
 #include "stdlib.h"
 #include "compareHelper.h"
@@ -37,8 +38,9 @@ void selection(Item **data, int size, int (*ptFuncCompare)(const void *, const v
     }
 }
 
-void sortData(Item **inputArray, int inputArraySize, int algorithm, int field, int direction) {
+long long sortData(Item **inputArray, int inputArraySize, int algorithm, int field, int direction) {
 
+    clock_t begin = clock();
     if (algorithm == QSORT && field == FIO && direction == UP)
         qsort(*inputArray, inputArraySize, sizeof(Item), comparatorUpFio);
     else if (algorithm == QSORT && field == FIO && direction == DOWN)
@@ -77,4 +79,7 @@ void sortData(Item **inputArray, int inputArraySize, int algorithm, int field, i
         selection(inputArray, inputArraySize, comparatorUpMark);
     else if (algorithm == SELECTION && field == AVG_MARK && direction == DOWN)
         selection(inputArray, inputArraySize, comparatorDownMark);
+
+    return clock() - begin;
+
 }

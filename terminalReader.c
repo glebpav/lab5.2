@@ -67,8 +67,8 @@ TerminalInput2 getTerminalInput2(int argc, char **argv) {
         printf("    -v - var (field) of sorting (FIO = 0, GROUP_NUMBER = 1, AVG_MARK = 2)\n");
         printf("    -d - direction of sorting (UP = 0, DOWN = 1)\n");
         printf("required args:\n");
-        printf("    first - name of input file\n");
-        printf("    second - name of output file\n");
+        printf("    first - count of elements in array\n");
+        printf("    second - count of arrays\n");
         exit(0);
     }
 
@@ -102,9 +102,9 @@ TerminalInput2 getTerminalInput2(int argc, char **argv) {
     for (; optind < argc; optind++) {
         printf("extra arguments: %s\n", argv[optind]);
         if (optind == 7) {
-            terminalInput.arrayLen = argv[optind];
+            terminalInput.arrayLen = atoi(argv[optind]);
         } else if (optind == 8) {
-            terminalInput.countOfArrays = argv[optind];
+            terminalInput.countOfArrays = atoi(argv[optind]);
         }
     }
 

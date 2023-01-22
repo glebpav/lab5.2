@@ -27,8 +27,8 @@ typedef struct TerminalInput {
 }TerminalInput;
 
 typedef struct TerminalInput2 {
-    char *arrayLen;
-    char *countOfArrays;
+    int arrayLen;
+    int countOfArrays;
     enum DirectionOfSorting directionOfSorting;
     enum AlgorithmOfSorting algorithmOfSorting;
     enum StructFields fieldOfSorting;
@@ -43,5 +43,6 @@ typedef struct Item {
 void clearItem(Item *item);
 char *concatenate(char *str1, char *str2);
 void errorHandler(char *msg);
+char *randSting(int len);
 
 #endif //UNTITLED_UTILS_H

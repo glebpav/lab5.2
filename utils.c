@@ -35,3 +35,15 @@ void errorHandler(char *msg) {
     printf("%s\n", msg);
     exit(1);
 }
+
+char *randSting(int len) {
+    char *str = calloc(len, sizeof(len));
+    const char charset[] = "abcdefghijklmnopqrstuvwxyzQWERTYUIOPASDFGHJKLZXCVBNM";
+
+    for (size_t n = 0; n < len; n++) {
+        int key = rand() % (int) (sizeof charset - 1);
+        str[n] = charset[key];
+    }
+    // printf("\n rand str: %s\n", str);
+    return str;
+}

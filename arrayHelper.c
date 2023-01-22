@@ -1,6 +1,20 @@
 #include "arrayHelper.h"
 #include <stdlib.h>
 #include <string.h>
+#include "stdio.h"
+
+void generateAndFillArray(Item **array, int arrayLen) {
+    // *array = calloc(arrayLen, sizeof(Item));
+    Item item;
+    for (int i = 0; i < arrayLen; i++) {
+        item.avgMark = rand();
+        item.groupNumber = randSting(16);
+        item.fio = randSting(16);
+        (*array) [i] = item;
+
+        // printf("~%s\n", (*array)[i].groupNumber);
+    }
+}
 
 void pushElement(Item **inputArray, int inputLen, Item newItem) {
     if (inputLen == 0) (*inputArray) = calloc(1, sizeof (Item));
