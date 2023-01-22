@@ -3,4 +3,4 @@ project(untitled C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(untitled main.c terminalReader.c terminalReader.h utils.h fileHelper.c fileHelper.h arrayHelper.c arrayHelper.h utils.c sortHelper.c sortHelper.h compareHelper.c compareHelper.h)
+add_executable(untitled main.c terminalReader.c terminalReader.h utils.h fileHelper.c fileHelper.h arrayHelper.c arrayHelper.h utils.c sortHelper.c sortHelper.h compareHelper.c compareHelper.h main2.c)

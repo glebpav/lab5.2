@@ -27,8 +27,8 @@ typedef struct TerminalInput {
 }TerminalInput;
 
 typedef struct TerminalInput2 {
-    int arrayLen;
-    int countOfArrays;
+    char *arrayLen;
+    char *countOfArrays;
     enum DirectionOfSorting directionOfSorting;
     enum AlgorithmOfSorting algorithmOfSorting;
     enum StructFields fieldOfSorting;

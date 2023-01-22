@@ -9,6 +9,6 @@
 #include "utils.h"
 
 TerminalInput getTerminalInput(int argc, char **argv);
-
+TerminalInput2 getTerminalInput2(int argc, char **argv);
 
 #endif //UNTITLED_TERMINALREADER_H
